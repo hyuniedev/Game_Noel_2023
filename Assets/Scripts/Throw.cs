@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Throw : MonoBehaviour
 {
+    private Rigidbody2D rb;
     private Vector3 positionPressMouse;
     private Vector3 positionCurrentOfMouse;
     private bool isRotation = false;
     [SerializeField] private Transform prevBullet;
     
+    private void Awake() {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         positionPressMouse = Vector3.zero;
@@ -49,6 +53,11 @@ public class Throw : MonoBehaviour
         
         transform.position = forceThrow;
     }
+
+    private void AddForce_Throw(){
+        rb.AddForce(transform.up);
+    }
+
     // change position of mouse to world game 
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
