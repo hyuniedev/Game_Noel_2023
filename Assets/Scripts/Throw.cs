@@ -45,8 +45,6 @@ public class Throw : MonoBehaviour
         // direction
         transform.up = PointToMouse;
         //force
-        //Vector3 force = PointToMouse / 50;
-        //transform.position = new Vector3(transform.position.x - force.x, transform.position.y - force.y, transform.position.z - force.z);
         Vector3 forceThrow = transform.position - PointToMouse / 50;
         
         transform.position = forceThrow;
