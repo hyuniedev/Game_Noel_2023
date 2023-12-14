@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Santa_lost_his_reindeer.sln"
+    "dotnet.defaultSolution": "Game_Noel_2023.sln"
 }
