@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Throw : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Throw : MonoBehaviour
     private Vector3 positionCurrentOfMouse;
     private bool isRotation = false;
     [SerializeField] private Transform prevBullet;
+    [SerializeField] private int forceBall = 100;
     
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +22,7 @@ public class Throw : MonoBehaviour
 
     void Update()
     {
+        Test();
         Debug.DrawLine(transform.position,transform.position + transform.up * 2, Color.red);
         // Press mouse
         if(Input.GetMouseButtonDown(0)){
@@ -33,9 +36,15 @@ public class Throw : MonoBehaviour
         // Out mouse
         if(Input.GetMouseButtonUp(0)){
             isRotation = false;
+            AddForce_Throw();
             transform.up = Vector3.zero;
             positionPressMouse = Vector3.zero;
-            transform.position = prevBullet.position;
+            // transform.position = prevBullet.position;
+        }
+    }
+    private void Test(){
+        if(Input.GetKeyDown(KeyCode.R)){
+            SceneManager.LoadScene(0);
         }
     }
     private void onHoldMouse(){
@@ -55,7 +64,8 @@ public class Throw : MonoBehaviour
     }
 
     private void AddForce_Throw(){
-        rb.AddForce(transform.up);
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.AddForce(transform.up * transform.position.magnitude * forceBall);
     }
 
     // change position of mouse to world game 
