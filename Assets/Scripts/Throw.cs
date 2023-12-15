@@ -40,20 +40,19 @@ public class Throw : MonoBehaviour
         }
     }
     private void resetStaticGift(){
-        clickDekiru = true;
         gift.transform.position = transformRepawn.position;
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.velocity = Vector3.zero;
         tenClickMouse = Vector3.zero;
         imaMouse = Vector3.zero;
-        // gift.transform.up = new Vector3(0,0,0);
+        clickDekiru = true;
     }
     private Vector3 getVectorMouse(){
         return imaMouse - tenClickMouse;
     }
     private void AddForce(){
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.AddForce(gift.transform.up.normalized * getPositionMouse().magnitude * forceThrow);
+        rb.AddForce(gift.transform.up.normalized * Mathf.Abs(getPositionMouse().magnitude) * forceThrow);
     }
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
