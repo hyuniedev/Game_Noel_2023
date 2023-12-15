@@ -5,82 +5,57 @@ using UnityEngine.SceneManagement;
 
 public class Throw : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Vector3 positionPressMouse;
-    private Vector3 positionCurrentOfMouse;
-    private bool isRotation = false;
-    [SerializeField] private Transform prevBullet;
-    [SerializeField] private int forceBall = 100;
-    
-    private void Awake() {
-        rb = GetComponent<Rigidbody2D>();
-    }
-    void Start()
-    {
-        positionPressMouse = Vector3.zero;
-    }
+    [SerializeField] private GameObject gift;
+    [SerializeField] private Transform transformRepawn;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float forceThrow = 100f;
+    private Vector3 imaMouse;
+    private Vector3 tenClickMouse;
+    private bool clickDekiru = true;
 
-    void Update()
-    {
-        Test();
-        Debug.DrawLine(transform.position,transform.position + transform.up * 2, Color.red);
-        // Press mouse
+    private void Start() {
+        resetStaticGift();
+    }
+    private void Update() {
+        if(clickDekiru){
+            checkClickOnMouse();
+        }
+    }
+    private void checkClickOnMouse(){
+        // start click
         if(Input.GetMouseButtonDown(0)){
-            positionPressMouse = getPositionMouse();
-            isRotation = true;
+            tenClickMouse = getPositionMouse();
         }
-        // Hold mouse
-        if(isRotation){
-            onHoldMouse(); 
-        }    
-        // Out mouse
+        // on click
+        if(Input.GetMouseButton(0)){
+            imaMouse = getPositionMouse();
+            gift.transform.up = -1 * getVectorMouse();
+            Debug.DrawLine(gift.transform.position,gift.transform.up * 2 + gift.transform.position,Color.magenta);
+        }
+        // end click
         if(Input.GetMouseButtonUp(0)){
-            isRotation = false;
-            AddForce_Throw();
-            transform.up = Vector3.zero;
-            positionPressMouse = Vector3.zero;
-            transform.position = prevBullet.position;
+            clickDekiru = false;
+            AddForce();
+            Invoke(nameof(resetStaticGift), 2.0f);
         }
     }
-    private void Test(){
-        if(Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene(0);
-        }
+    private void resetStaticGift(){
+        clickDekiru = true;
+        gift.transform.position = transformRepawn.position;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.velocity = Vector3.zero;
+        tenClickMouse = Vector3.zero;
+        imaMouse = Vector3.zero;
+        // gift.transform.up = new Vector3(0,0,0);
     }
-    private void onHoldMouse(){
-        positionCurrentOfMouse = getPositionMouse();
-        Vector3 PointToMouse = new Vector3(
-                positionPressMouse.x - positionCurrentOfMouse.x,
-                positionPressMouse.y - positionCurrentOfMouse.y,
-                positionPressMouse.z - positionCurrentOfMouse.z
-        );
-        // ##Gioi han PointToMouse.##
-
-
-
-        // direction
-        transform.up = PointToMouse;
-        //force
-        Vector3 forceThrow = transform.position - PointToMouse / 100;
-        
-        transform.position = forceThrow;
+    private Vector3 getVectorMouse(){
+        return imaMouse - tenClickMouse;
     }
-
-    private void AddForce_Throw(){
+    private void AddForce(){
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.AddForce(transform.up * transform.position.magnitude * forceBall);
+        rb.AddForce(gift.transform.up.normalized * getPositionMouse().magnitude * forceThrow);
     }
-
-    // change position of mouse to world game 
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Respawn"){
-            transform.position = prevBullet.position;
-            rb.velocity = Vector3.zero;
-            transform.up = Vector3.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        }
     }
 }
