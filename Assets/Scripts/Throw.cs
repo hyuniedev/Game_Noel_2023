@@ -39,7 +39,7 @@ public class Throw : MonoBehaviour
             AddForce_Throw();
             transform.up = Vector3.zero;
             positionPressMouse = Vector3.zero;
-            // transform.position = prevBullet.position;
+            transform.position = prevBullet.position;
         }
     }
     private void Test(){
@@ -55,10 +55,13 @@ public class Throw : MonoBehaviour
                 positionPressMouse.z - positionCurrentOfMouse.z
         );
         // ##Gioi han PointToMouse.##
+
+
+
         // direction
         transform.up = PointToMouse;
         //force
-        Vector3 forceThrow = transform.position - PointToMouse / 50;
+        Vector3 forceThrow = transform.position - PointToMouse / 100;
         
         transform.position = forceThrow;
     }
@@ -71,5 +74,13 @@ public class Throw : MonoBehaviour
     // change position of mouse to world game 
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Respawn"){
+            transform.position = prevBullet.position;
+            rb.velocity = Vector3.zero;
+            transform.up = Vector3.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
     }
 }
