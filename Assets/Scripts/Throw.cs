@@ -28,9 +28,8 @@ public class Throw : MonoBehaviour
         }
         // on click
         if(Input.GetMouseButton(0)){
-            gift.transform.up = -1 * getVectorMouse();
             imaMouse = getPositionMouse();
-            Debug.DrawLine(gift.transform.position,gift.transform.up * 2 + gift.transform.position,Color.magenta);
+            
         }
         // end click
         if(Input.GetMouseButtonUp(0)){
@@ -53,7 +52,7 @@ public class Throw : MonoBehaviour
     }
     private void AddForce(){
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.AddForce(gift.transform.up.normalized * Mathf.Abs(getPositionMouse().magnitude) * forceThrow);
+        rb.AddForce(getVectorMouse().normalized * -1 * Mathf.Abs(getPositionMouse().magnitude) * forceThrow);
     }
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
