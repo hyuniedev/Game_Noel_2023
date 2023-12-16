@@ -28,8 +28,8 @@ public class Throw : MonoBehaviour
         }
         // on click
         if(Input.GetMouseButton(0)){
-            imaMouse = getPositionMouse();
             gift.transform.up = -1 * getVectorMouse();
+            imaMouse = getPositionMouse();
             Debug.DrawLine(gift.transform.position,gift.transform.up * 2 + gift.transform.position,Color.magenta);
         }
         // end click
@@ -39,7 +39,8 @@ public class Throw : MonoBehaviour
             Invoke(nameof(resetStaticGift), 2.0f);
         }
     }
-    private void resetStaticGift(){
+
+        private void resetStaticGift(){
         gift.transform.position = transformRepawn.position;
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.velocity = Vector3.zero;
