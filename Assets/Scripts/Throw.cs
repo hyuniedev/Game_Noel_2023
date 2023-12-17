@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Throw : MonoBehaviour
 {
+    [SerializeField] private Animator animSanta;
     [SerializeField] private GameObject gift;
     [SerializeField] private Transform transformRepawn;
     [SerializeField] private Rigidbody2D rb;
@@ -15,6 +16,7 @@ public class Throw : MonoBehaviour
 
     private void Start() {
         resetStaticGift();
+        gift.SetActive(false);
     }
     private void Update() {
         if(clickDekiru){
@@ -32,9 +34,10 @@ public class Throw : MonoBehaviour
         }
         // end click
         if(Input.GetMouseButtonUp(0)){
+            animSanta.SetBool("isThrow",true);
             clickDekiru = false;
-            AddForce();
-            Invoke(nameof(resetStaticGift), 2.0f);
+            Invoke(nameof(AddForce),0.5f);
+            Invoke(nameof(resetStaticGift), 2.5f);
         }
     }
     private void resetStaticGift(){
@@ -44,11 +47,14 @@ public class Throw : MonoBehaviour
         tenClickMouse = Vector3.zero;
         imaMouse = Vector3.zero;
         clickDekiru = true;
+        gift.SetActive(false);
     }
     private Vector3 getVectorMouse(){
         return imaMouse - tenClickMouse;
     }
     private void AddForce(){
+        gift.SetActive(true);
+        animSanta.SetBool("isThrow",false);
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.AddForce(getVectorMouse().normalized * -1 * Mathf.Abs(getPositionMouse().magnitude) * forceThrow);
     }
