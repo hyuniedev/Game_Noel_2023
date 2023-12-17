@@ -49,14 +49,14 @@ public class Throw : MonoBehaviour
         clickDekiru = true;
         gift.SetActive(false);
     }
-    private Vector3 getVectorMouse(){
-        return imaMouse - tenClickMouse;
-    }
     private void AddForce(){
         gift.SetActive(true);
         animSanta.SetBool("isThrow",false);
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.AddForce(getVectorMouse().normalized * -1 * Mathf.Abs(getPositionMouse().magnitude) * forceThrow);
+    }
+    private Vector3 getVectorMouse(){
+        return imaMouse - tenClickMouse;
     }
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
