@@ -29,7 +29,6 @@ public class Throw : MonoBehaviour
         // on click
         if(Input.GetMouseButton(0)){
             imaMouse = getPositionMouse();
-            
         }
         // end click
         if(Input.GetMouseButtonUp(0)){
@@ -38,8 +37,7 @@ public class Throw : MonoBehaviour
             Invoke(nameof(resetStaticGift), 2.0f);
         }
     }
-
-        private void resetStaticGift(){
+    private void resetStaticGift(){
         gift.transform.position = transformRepawn.position;
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.velocity = Vector3.zero;
