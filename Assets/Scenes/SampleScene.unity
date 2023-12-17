@@ -136,12 +136,12 @@ GameObject:
   - component: {fileID: 101045487}
   - component: {fileID: 101045490}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Gift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &101045486
 Transform:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 101045485}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.50588316, w: 0.862602}
-  m_LocalPosition: {x: -0.92, y: -1.33, z: 0}
+  m_LocalPosition: {x: -1.43, y: -1.35, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -626,6 +626,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &686752106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686752107}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &686752107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686752106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.852326, y: -0.5886521, z: -3.7300024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &744592275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +1107,7 @@ Transform:
   m_GameObject: {fileID: 1477180288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92, y: -1.33, z: 0}
+  m_LocalPosition: {x: -1.42, y: -1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1128,6 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f414dce62117d5be4af33abb36d8d0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animSanta: {fileID: 1637656081}
   gift: {fileID: 101045485}
   transformRepawn: {fileID: 1477180289}
   rb: {fileID: 101045490}
@@ -1442,3 +1474,4 @@ SceneRoots:
   - {fileID: 1770881890}
   - {fileID: 1482590926}
   - {fileID: 2071906985}
+  - {fileID: 686752107}
