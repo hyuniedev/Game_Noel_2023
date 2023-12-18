@@ -26,7 +26,7 @@ public class GUI_In_Scene : MonoBehaviour
         }else{
             dPrevForce = dCurForce;
         }
-        prevForce.text = "Current Force: " + (int)dPrevForce + " N";
-        curForce.text = "Old Force: " + (int)dCurForce + " N";
+        prevForce.text = "Current Force: " + dPrevForce.ToString("F2") + " N";
+        curForce.text = "Old Force: " + dCurForce.ToString("F2") + " N";
     }
 }

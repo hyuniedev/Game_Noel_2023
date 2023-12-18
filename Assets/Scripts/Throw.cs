@@ -46,8 +46,8 @@ public class Throw : MonoBehaviour
         rb.velocity = Vector3.zero;
         tenClickMouse = Vector3.zero;
         imaMouse = Vector3.zero;
-        clickDekiru = true;
         gift.SetActive(false);
+        clickDekiru = true;
     }
     private void AddForce(){
         gift.SetActive(true);
