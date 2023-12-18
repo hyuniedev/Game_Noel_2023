@@ -12,7 +12,7 @@ public class Throw : MonoBehaviour
     [SerializeField] private float forceThrow = 100f;
     private Vector3 imaMouse;
     private Vector3 tenClickMouse;
-    private bool clickDekiru = true;
+    public bool clickDekiru = true;
 
     private void Start() {
         resetStaticGift();
@@ -53,12 +53,15 @@ public class Throw : MonoBehaviour
         gift.SetActive(true);
         animSanta.SetBool("isThrow",false);
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.AddForce(getVectorMouse().normalized * -1 * Mathf.Abs(getPositionMouse().magnitude) * forceThrow);
+        rb.AddForce(getVectorMouse().normalized * -1 * Mathf.Abs(getVectorMouse().magnitude) * forceThrow);
     }
     private Vector3 getVectorMouse(){
-        return imaMouse - tenClickMouse;
+        return imaMouse - tenClickMouse; 
     }
     private Vector3 getPositionMouse(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+    public double getCurForce(){
+        return getVectorMouse().magnitude;
     }
 }
