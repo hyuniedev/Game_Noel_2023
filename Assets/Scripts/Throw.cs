@@ -9,18 +9,23 @@ public class Throw : MonoBehaviour
     [SerializeField] private GameObject gift;
     [SerializeField] private Transform transformRepawn;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject vectorDirec;
     [SerializeField] private float forceThrow = 100f;
     private Vector3 imaMouse;
     private Vector3 tenClickMouse;
-    public bool clickDekiru = true;
+    private bool clickDekiru;
 
     private void Start() {
+        clickDekiru = true;
         resetStaticGift();
         gift.SetActive(false);
     }
     private void Update() {
         if(clickDekiru){
             checkClickOnMouse();
+            vectorDirec.SetActive(true);
+        }else{
+            vectorDirec.SetActive(false);
         }
     }
     private void checkClickOnMouse(){
@@ -55,7 +60,7 @@ public class Throw : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.AddForce(getVectorMouse().normalized * -1 * Mathf.Abs(getVectorMouse().magnitude) * forceThrow);
     }
-    private Vector3 getVectorMouse(){
+    public Vector3 getVectorMouse(){
         return imaMouse - tenClickMouse; 
     }
     private Vector3 getPositionMouse(){
@@ -63,5 +68,8 @@ public class Throw : MonoBehaviour
     }
     public double getCurForce(){
         return getVectorMouse().magnitude;
+    }
+    public bool getClickDekiru(){
+        return clickDekiru;
     }
 }
