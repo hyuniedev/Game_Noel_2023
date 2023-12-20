@@ -4,49 +4,33 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private Sprite doorOpen;
-    [SerializeField] private Sprite doorClose;
-    [SerializeField] private GameObject KeyE;
-    private bool stateDoor;
+    [SerializeField] private GameObject TheDoor;
+    [SerializeField] private Sprite spriteDoorOpen;
+    [SerializeField] private Sprite spriteDoorClose;
+    [SerializeField] private GameObject ColliderDoor;
+    private bool keyEActive;
     private void Start() {
-        KeyE.SetActive(false);
-        stateDoor = false;
+        ColliderDoor.SetActive(false);
+        keyEActive = false;
     }
     private void Update() {
-        Debug.Log(stateDoor);
-        if(stateDoor){
-            transform.GetComponent<SpriteRenderer>().sprite = doorOpen;
-            transform.GetComponent<BoxCollider2D>().isTrigger = true;
-        }
-        else{
-            transform.GetComponent<BoxCollider2D>().isTrigger = false;
-            GetComponent<SpriteRenderer>().sprite = doorClose;
-        }
-    }
-    private void OnCollisionStay2D(Collision2D other) {
-        if(other.gameObject.tag == "Player"){
-            KeyE.SetActive(true);
+        if(keyEActive){
             if(Input.GetKeyDown(KeyCode.E)){
-                stateDoor = !stateDoor;
+                ColliderDoor.SetActive(false);
+                TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
             }
         }
     }
-    private void OnCollisionExit2D(Collision2D other) {
+    private void OnTriggerStay2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
-            KeyE.SetActive(true);
+            keyEActive = true;
         }
     }
-    // private void OnTriggerStay2D(Collider2D other) {
-    //     KeyE.SetActive(true);
-    //     if(other.gameObject.tag == "Player"){
-    //         if(Input.GetKeyDown(KeyCode.E)){
-    //             stateDoor = !stateDoor;
-    //         }
-    //     }
-    // }
-    // private void OnTriggerExit2D(Collider2D other) {
-    //     if(other.gameObject.tag == "Player"){
-    //         KeyE.SetActive(true);
-    //     }
-    // }
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.tag == "Player"){
+            keyEActive = false;
+            TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorClose;
+            ColliderDoor.SetActive(true);
+        }
+    }
 }

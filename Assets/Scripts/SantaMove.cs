@@ -9,6 +9,7 @@ public class SantaMove : MonoBehaviour
     [SerializeField] private GameObject imgSanta;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speedMove = 25f;
+    [SerializeField] private GameObject KeyE;
     private float horizontal;
     private float vertical;
     private bool isRight;
@@ -32,10 +33,17 @@ public class SantaMove : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-    private void MoveSanta(){
-        
-    }
     private Vector3 getPositionMouse(){
         return Camera.main.WorldToScreenPoint(Input.mousePosition);
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Door"){
+            KeyE.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.tag == "Door"){
+            KeyE.SetActive(false);
+        }
     }
 }
