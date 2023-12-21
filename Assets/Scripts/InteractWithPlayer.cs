@@ -6,9 +6,13 @@ public class NewBehaviourScript : MonoBehaviour
 {
     private bool checkTrigger = false;
     [SerializeField] private GameObject gift;
+    private void Start() {
+        gift.SetActive(false);
+    }
     private void Update() {
         if(checkTrigger){
-
+            gift.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
     private void OnTriggerStay2D(Collider2D other) {

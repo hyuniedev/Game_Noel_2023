@@ -257,3 +257,4 @@ MonoBehaviour:
   spriteDoorOpen: {fileID: -1623814361, guid: e0ca451eaf7355d319059f9a88954475, type: 3}
   spriteDoorClose: {fileID: -97260243, guid: e0ca451eaf7355d319059f9a88954475, type: 3}
   ColliderDoor: {fileID: 6603471371961266267}
+  key: {fileID: 2042192780529336458, guid: e16ca2db072fe35cd9f5a00b0c36ac63, type: 3}

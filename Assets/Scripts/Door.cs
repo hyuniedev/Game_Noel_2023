@@ -8,6 +8,8 @@ public class Door : MonoBehaviour
     [SerializeField] private Sprite spriteDoorOpen;
     [SerializeField] private Sprite spriteDoorClose;
     [SerializeField] private GameObject ColliderDoor;
+    [SerializeField] private KeyController key;
+    [SerializeField] private bool canCoChia = false;
     private bool keyEActive;
     private void Start() {
         ColliderDoor.SetActive(true);
@@ -15,9 +17,14 @@ public class Door : MonoBehaviour
     }
     private void Update() {
         if(keyEActive){
-            if(Input.GetKeyDown(KeyCode.E)){
+            if(Input.GetKeyDown(KeyCode.E) && !canCoChia){
                 ColliderDoor.SetActive(false);
                 TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
+            }else if(Input.GetKeyDown(KeyCode.E) && key.getNumKey() > 0){
+                ColliderDoor.SetActive(false);
+                TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
+                this.canCoChia = false;
+                key.setNumKey();
             }
         }
     }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7709642707467808498}
   - component: {fileID: 8482108106189104357}
+  - component: {fileID: 879889999424328173}
   m_Layer: 0
   m_Name: Nimotsu
   m_TagString: Door
@@ -77,3 +78,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &879889999424328173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8583086000332182176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a2fdb846445477a8c52a8155f9478e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gift: {fileID: 0}

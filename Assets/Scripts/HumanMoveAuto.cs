@@ -16,7 +16,7 @@ public class HumanMoveAuto : MonoBehaviour
     public bool phatHien = false;
     private void Start()
     {
-        timeSleep = 0.0f;
+        timeSleep = 10.0f;
         index = 0;
         target = ListPointMove[index].position;
         isMove = true;
@@ -25,7 +25,6 @@ public class HumanMoveAuto : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(phatHien);
         if (player.position.y <= -9.0f)
         {
             phatHien = false;

@@ -33,9 +33,6 @@ public class SantaMove : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-    private Vector3 getPositionMouse(){
-        return Camera.main.WorldToScreenPoint(Input.mousePosition);
-    }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Door"){
             KeyE.SetActive(true);
@@ -44,6 +41,11 @@ public class SantaMove : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.tag == "Door"){
             KeyE.SetActive(false);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Ghost"){
+            
         }
     }
 }
