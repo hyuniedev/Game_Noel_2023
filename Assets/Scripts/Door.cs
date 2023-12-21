@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject ColliderDoor;
     private bool keyEActive;
     private void Start() {
-        ColliderDoor.SetActive(false);
+        ColliderDoor.SetActive(true);
         keyEActive = false;
     }
     private void Update() {
