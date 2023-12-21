@@ -12,15 +12,23 @@ public class HumanMoveAuto : MonoBehaviour
     private Vector3 target;
     private int index;
     private float timeIma;
+    public bool phatHien = false;
     private void Start() {
         timeSleep = 0.0f;
         index = 0;
         target = ListPointMove[index].position;
         isMove = true;
-        InvokeRepeating(nameof(randomTimeSleep),10.0f,20.0f);
+        InvokeRepeating(nameof(randomTimeSleep),8.0f,15.0f);
         timeIma = 0;
     }
     private void Update() {
+        if(!phatHien){
+            move();
+        }else{
+            
+        }
+    }
+    private void move(){
         timeIma += Time.fixedDeltaTime/10;
         if(timeIma >= timeSleep){
             isMove = false;
