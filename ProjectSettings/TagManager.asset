@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PointStart
   - Door
+  - Ghost
   layers:
   - Default
   - TransparentFX

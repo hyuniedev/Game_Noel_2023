@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f9124d2a705613689e990beb15c6c9e
+guid: 1e83f8f9aebc7851d91491830b317149
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,106 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button UI_0
+      name: opions_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 129
-        width: 16
-        height: 15
+        x: 1
+        y: 15
+        width: 125
+        height: 177
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dfc713e72320001881e172b27ff13a6
-      internalID: -1365976310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button UI_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 129
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bcc5073c68cd0624861b4b1030b46ef
-      internalID: 1319037048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button UI_2
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 176
-        width: 1
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0038d17e7297b1fa6b3a1ace22b6f973
-      internalID: -1032748597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button UI_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 129
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25be19c36af77384589da69a17170656
-      internalID: -1072275148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button UI_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 129
-        width: 16
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9429eb1f4445518c68321e00bb03ff37
-      internalID: -113013180
+      spriteID: 15683c4a582e6b4ebaafebc642266fa2
+      internalID: -8011309
       vertices: []
       indices: 
       edges: []
@@ -238,11 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      button UI_0: -1365976310
-      button UI_1: 1319037048
-      button UI_2: -1032748597
-      button UI_3: -1072275148
-      button UI_4: -113013180
+      opions_0: -8011309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

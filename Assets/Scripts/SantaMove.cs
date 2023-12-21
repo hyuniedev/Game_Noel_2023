@@ -11,9 +11,13 @@ public class SantaMove : MonoBehaviour
     [SerializeField] private float speedMove = 25f;
     [SerializeField] private GameObject KeyE;
     [SerializeField] private Animator anim;
+    [SerializeField] private GameObject dieCanvas;
     private float horizontal;
     private float vertical;
     private bool isRight;
+    private void Start() {
+        Time.timeScale = 1.0f;
+    }
 
     // Update is called once per frame
     void Update()
@@ -48,7 +52,8 @@ public class SantaMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Ghost"){
-            
+            Time.timeScale = 0.0f;
+            dieCanvas.SetActive(true);
         }
     }
 }

@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1669785244500064407}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   - {fileID: 8759473627802181172}
   - {fileID: 3105677930728608374}
   speedRun: 1
+  dame: 0
   phatHien: 0
 --- !u!1 &6375765331340615047
 GameObject:

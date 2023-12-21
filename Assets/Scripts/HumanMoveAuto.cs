@@ -14,6 +14,7 @@ public class HumanMoveAuto : MonoBehaviour
     private int index;
     private float timeIma;
     public bool phatHien = false;
+    
     private void Start()
     {
         timeSleep = 10.0f;
@@ -25,7 +26,7 @@ public class HumanMoveAuto : MonoBehaviour
     }
     private void Update()
     {
-        if (player.position.y <= -9.0f)
+        if (player.position.y <= -8.5f)
         {
             phatHien = false;
         }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f9124d2a705613689e990beb15c6c9e
+guid: 594e0a23e116c6961a5d808c5990966e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,106 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button UI_0
+      name: button_background_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 129
-        width: 16
-        height: 15
+        x: 55
+        y: 96
+        width: 50
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dfc713e72320001881e172b27ff13a6
-      internalID: -1365976310
+      spriteID: dd11cb7ae585b18ec820b48dc69c34fb
+      internalID: -132427865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button UI_1
+      name: button_background_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 129
-        width: 16
-        height: 15
+        x: 133
+        y: 41
+        width: 144
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bcc5073c68cd0624861b4b1030b46ef
-      internalID: 1319037048
+      spriteID: 0a51638f05b7ddac5ab560a40e3ffabe
+      internalID: 1100623729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button UI_2
+      name: button_background_2
       rect:
         serializedVersion: 2
-        x: 191
-        y: 176
-        width: 1
-        height: 15
+        x: 55
+        y: 73
+        width: 45
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0038d17e7297b1fa6b3a1ace22b6f973
-      internalID: -1032748597
+      spriteID: 0206c73a4e88a5289b63ffaf5faeb5e6
+      internalID: -1925701860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button UI_3
+      name: button_background_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 129
-        width: 16
-        height: 15
+        x: 59
+        y: 51
+        width: 29
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25be19c36af77384589da69a17170656
-      internalID: -1072275148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button UI_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 129
-        width: 16
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9429eb1f4445518c68321e00bb03ff37
-      internalID: -113013180
+      spriteID: e7af66e2efa4d287cb1f46b7760b9dac
+      internalID: -1085236909
       vertices: []
       indices: 
       edges: []
@@ -238,11 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      button UI_0: -1365976310
-      button UI_1: 1319037048
-      button UI_2: -1032748597
-      button UI_3: -1072275148
-      button UI_4: -113013180
+      button_background_0: -132427865
+      button_background_1: 1100623729
+      button_background_2: -1925701860
+      button_background_3: -1085236909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
