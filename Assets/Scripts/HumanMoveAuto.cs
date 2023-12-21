@@ -36,7 +36,7 @@ public class HumanMoveAuto : MonoBehaviour
         else
         {
             target = player.position;
-            human.transform.position = Vector3.MoveTowards(human.transform.position, target, (speedRun + 0.5f) * Time.fixedDeltaTime);
+            human.transform.position = Vector3.MoveTowards(human.transform.position, target, (speedRun + 0.4f) * Time.fixedDeltaTime);
         }
     }
     private void move()

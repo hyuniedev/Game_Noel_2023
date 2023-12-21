@@ -10,6 +10,7 @@ public class SantaMove : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speedMove = 25f;
     [SerializeField] private GameObject KeyE;
+    [SerializeField] private Animator anim;
     private float horizontal;
     private float vertical;
     private bool isRight;
@@ -20,6 +21,7 @@ public class SantaMove : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         if(Mathf.Round(horizontal)!=0 || Mathf.Round(vertical) != 0){
+            anim.SetBool("isThrow",true);
             float x = horizontal, y = vertical;
             if(Mathf.Abs(Mathf.Round(x)) == Mathf.Abs(Mathf.Round(y))){
                 x = 1/Mathf.Sqrt(2) * horizontal;
@@ -30,6 +32,7 @@ public class SantaMove : MonoBehaviour
             else if(horizontal<0) isRight = false;
             imgSanta.transform.rotation = Quaternion.Euler(new Vector3(0,isRight?0:180,0));
         }else{
+            anim.SetBool("isThrow",false);
             rb.velocity = Vector3.zero;
         }
     }
