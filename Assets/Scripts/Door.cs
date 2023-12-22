@@ -10,9 +10,13 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject ColliderDoor;
     [SerializeField] private KeyController key;
     [SerializeField] private bool canCoChia = false;
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioClip clipOpenDoor;
+    [SerializeField] private AudioClip clipNotKey;
     private bool keyEActive;
     private void Start() {
         ColliderDoor.SetActive(true);
+        audio.clip = clipOpenDoor;
         keyEActive = false;
     }
     private void Update() {
@@ -20,11 +24,19 @@ public class Door : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && !canCoChia){
                 ColliderDoor.SetActive(false);
                 TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
+                audio.clip = clipOpenDoor;
+                audio.Play();
             }else if(Input.GetKeyDown(KeyCode.E) && key.getNumKey() > 0){
                 ColliderDoor.SetActive(false);
                 TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
                 this.canCoChia = false;
                 key.setNumKey();
+                audio.clip = clipOpenDoor;
+                audio.Play();
+            }
+            else if(Input.GetKeyDown(KeyCode.E)){
+                audio.clip = clipNotKey;
+                audio.Play();
             }
         }
     }

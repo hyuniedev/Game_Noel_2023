@@ -11,12 +11,18 @@ public class SantaMove : MonoBehaviour
     [SerializeField] private float speedMove = 25f;
     [SerializeField] private GameObject KeyE;
     [SerializeField] private Animator anim;
+    [SerializeField] private GameObject playCanvas;
     [SerializeField] private GameObject dieCanvas;
+    [SerializeField] private AudioSource audioBG;
+    [SerializeField] private AudioClip clipBG;
+    [SerializeField] private AudioClip clipLost;
+
     private float horizontal;
     private float vertical;
     private bool isRight;
     private void Start() {
         Time.timeScale = 1.0f;
+        audioBG.clip = clipBG;
     }
 
     // Update is called once per frame
@@ -52,8 +58,11 @@ public class SantaMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Ghost"){
+            other.gameObject.SetActive(false);
+            audioBG.PlayOneShot(clipLost);
             Time.timeScale = 0.0f;
             dieCanvas.SetActive(true);
+            playCanvas.SetActive(false);
         }
     }
 }
