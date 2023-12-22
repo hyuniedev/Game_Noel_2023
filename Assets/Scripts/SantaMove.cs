@@ -28,7 +28,6 @@ public class SantaMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ButtonController.getOpenAudio());
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         if(Mathf.Round(horizontal)!=0 || Mathf.Round(vertical) != 0){

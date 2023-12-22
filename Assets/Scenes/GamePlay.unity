@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &24801004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 127848872}
   m_Layer: 0
-  m_Name: Range
+  m_Name: RangeBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
