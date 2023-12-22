@@ -7,7 +7,7 @@ public class HumanMoveAuto : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private GameObject human;
     [SerializeField] private Transform[] ListPointMove;
-    [SerializeField] private float speedRun = 10;
+    [SerializeField] private float speedRun = 6;
     private float timeSleep;
     private bool isMove;
     private Vector3 target;
@@ -37,7 +37,7 @@ public class HumanMoveAuto : MonoBehaviour
         else
         {
             target = player.position;
-            human.transform.position = Vector3.MoveTowards(human.transform.position, target, (speedRun + 0.4f) * Time.fixedDeltaTime);
+            human.transform.position = Vector3.MoveTowards(human.transform.position, target, speedRun * Time.fixedDeltaTime);
         }
     }
     private void move()
