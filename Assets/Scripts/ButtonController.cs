@@ -13,9 +13,8 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private Image btn_Sound;
     [SerializeField] private Sprite SoundOn;
     [SerializeField] private Sprite SoundOff;
-    private static bool checkOnOffAudio;
+    private static bool checkOnOffAudio = true;
     private void Start() {
-        checkOnOffAudio = true;
         ui.SetActive(false);
         btn_menu.SetActive(true);
     }
