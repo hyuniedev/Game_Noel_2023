@@ -9,19 +9,19 @@ public class ButtonMenu : MonoBehaviour
     [SerializeField] private GameObject CanvasOption;
     [SerializeField] private AudioSource audioMenu;
     public void Play(){
+        if(ButtonController.getOpenAudio()) audioMenu.Play();
         SceneManager.LoadScene(1);
-        audioMenu.Play();
     }
     public void Option(){
         CanvasOption.SetActive(true);
-        audioMenu.Play();
+        if(ButtonController.getOpenAudio()) audioMenu.Play();
     }
     public void ThoatOption(){
         CanvasOption.SetActive(false);
-        audioMenu.Play();
+        if(ButtonController.getOpenAudio()) audioMenu.Play();
     }
     public void Exit(){
         Application.Quit();
-        audioMenu.Play();
+        if(ButtonController.getOpenAudio()) audioMenu.Play();
     }
 }

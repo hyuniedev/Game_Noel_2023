@@ -20,7 +20,7 @@ public class KeyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
             numKey++;
-            audioKey.Play();
+            if(ButtonController.getOpenAudio()) audioKey.Play();
             this.gameObject.SetActive(false);
         }
     }

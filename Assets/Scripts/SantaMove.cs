@@ -28,6 +28,7 @@ public class SantaMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(ButtonController.getOpenAudio());
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         if(Mathf.Round(horizontal)!=0 || Mathf.Round(vertical) != 0){
@@ -59,7 +60,7 @@ public class SantaMove : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Ghost"){
             other.gameObject.SetActive(false);
-            audioBG.PlayOneShot(clipLost);
+            if(ButtonController.getOpenAudio()) audioBG.PlayOneShot(clipLost);
             Time.timeScale = 0.0f;
             dieCanvas.SetActive(true);
             playCanvas.SetActive(false);

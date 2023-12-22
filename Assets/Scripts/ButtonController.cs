@@ -10,7 +10,12 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private KeyController key;
     [SerializeField] private GameObject ui;
     [SerializeField] private GameObject btn_menu;
+    [SerializeField] private Image btn_Sound;
+    [SerializeField] private Sprite SoundOn;
+    [SerializeField] private Sprite SoundOff;
+    private static bool checkOnOffAudio;
     private void Start() {
+        checkOnOffAudio = true;
         ui.SetActive(false);
         btn_menu.SetActive(true);
     }
@@ -18,6 +23,18 @@ public class ButtonController : MonoBehaviour
         txtKey.text = "X" + key.getNumKey();
         if(Input.GetKeyDown(KeyCode.E) && key.getNumKey() <= 0){
             CanhCao();
+        }
+    }
+    public static bool getOpenAudio(){
+        return checkOnOffAudio;
+    }
+    public void OnOffAudio(){
+        checkOnOffAudio = !checkOnOffAudio;
+        if(checkOnOffAudio){
+            btn_Sound.sprite = SoundOn;
+        }
+        else{
+            btn_Sound.sprite = SoundOff;
         }
     }
     public void ResetGame(){

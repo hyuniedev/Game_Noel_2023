@@ -25,18 +25,18 @@ public class Door : MonoBehaviour
                 ColliderDoor.SetActive(false);
                 TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
                 audioDoor.clip = clipOpenDoor;
-                audioDoor.Play();
+                if(ButtonController.getOpenAudio()) audioDoor.Play();
             }else if(Input.GetKeyDown(KeyCode.E) && key.getNumKey() > 0){
                 ColliderDoor.SetActive(false);
                 TheDoor.GetComponent<SpriteRenderer>().sprite = spriteDoorOpen;
                 this.canCoChia = false;
                 key.setNumKey();
                 audioDoor.clip = clipOpenDoor;
-                audioDoor.Play();
+                if(ButtonController.getOpenAudio()) audioDoor.Play();
             }
             else if(Input.GetKeyDown(KeyCode.E)){
                 audioDoor.clip = clipNotKey;
-                audioDoor.Play();
+                if(ButtonController.getOpenAudio()) audioDoor.Play();
             }
         }
     }

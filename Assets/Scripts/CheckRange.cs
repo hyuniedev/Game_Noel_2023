@@ -10,7 +10,7 @@ public class CheckRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
-            audioGhost.Play();
+            if(ButtonController.getOpenAudio()) audioGhost.Play();
         }
     }
     private void OnTriggerStay2D(Collider2D other) {
