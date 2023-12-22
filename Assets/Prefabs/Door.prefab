@@ -260,7 +260,7 @@ MonoBehaviour:
   ColliderDoor: {fileID: 6603471371961266267}
   key: {fileID: 2042192780529336458, guid: e16ca2db072fe35cd9f5a00b0c36ac63, type: 3}
   canCoChia: 0
-  audio: {fileID: 2350377145494381744}
+  audioDoor: {fileID: 2350377145494381744}
   clipOpenDoor: {fileID: 8300000, guid: a04e1a021500f4d1cbb928c6b638cde8, type: 3}
   clipNotKey: {fileID: 8300000, guid: 2a98e660e313f08ada4e9bf97963f3d0, type: 3}
 --- !u!82 &2350377145494381744

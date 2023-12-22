@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2412622556528256434}
   - component: {fileID: 6529992995616904264}
+  - component: {fileID: 4662315648509108384}
   - component: {fileID: 4779260645524848241}
   - component: {fileID: 8922157913482824968}
   m_Layer: 0
@@ -264,6 +265,26 @@ MonoBehaviour:
   rb: {fileID: 4779260645524848241}
   speedMove: 3.5
   KeyE: {fileID: 5598204725805715192}
+  anim: {fileID: 0}
+  playCanvas: {fileID: 0}
+  dieCanvas: {fileID: 0}
+  audioBG: {fileID: 0}
+  clipBG: {fileID: 0}
+  clipLost: {fileID: 0}
+--- !u!114 &4662315648509108384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982576825631299866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0674ca9640658d4a8aab1fed1c106f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numGiftBedInScene: 8
+  winCanvas: {fileID: 0}
 --- !u!50 &4779260645524848241
 Rigidbody2D:
   serializedVersion: 4

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class KeyController : MonoBehaviour
 {
     private static int numKey;
-    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource audioKey;
     private void Start() {
         numKey = 0;
     }
@@ -20,7 +20,7 @@ public class KeyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
             numKey++;
-            audio.Play();
+            audioKey.Play();
             this.gameObject.SetActive(false);
         }
     }

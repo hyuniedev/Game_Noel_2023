@@ -7,21 +7,21 @@ using UnityEngine.SceneManagement;
 public class ButtonMenu : MonoBehaviour
 {
     [SerializeField] private GameObject CanvasOption;
-    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource audioMenu;
     public void Play(){
         SceneManager.LoadScene(1);
-        audio.Play();
+        audioMenu.Play();
     }
     public void Option(){
         CanvasOption.SetActive(true);
-        audio.Play();
+        audioMenu.Play();
     }
     public void ThoatOption(){
         CanvasOption.SetActive(false);
-        audio.Play();
+        audioMenu.Play();
     }
     public void Exit(){
         Application.Quit();
-        audio.Play();
+        audioMenu.Play();
     }
 }
