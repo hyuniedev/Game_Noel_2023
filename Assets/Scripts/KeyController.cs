@@ -13,6 +13,9 @@ public class KeyController : MonoBehaviour
     public void setNumKey(){
         numKey--;
     }
+    public static void resetNumKey(){
+        numKey = 0;
+    }
     
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){

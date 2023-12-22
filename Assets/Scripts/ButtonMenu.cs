@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +8,7 @@ public class ButtonMenu : MonoBehaviour
     [SerializeField] private GameObject CanvasOption;
     [SerializeField] private AudioSource audioMenu;
     public void Play(){
+        KeyController.resetNumKey();
         if(ButtonController.getOpenAudio()) audioMenu.Play();
         SceneManager.LoadScene(1);
     }

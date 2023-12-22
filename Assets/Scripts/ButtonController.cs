@@ -38,6 +38,7 @@ public class ButtonController : MonoBehaviour
         }
     }
     public void ResetGame(){
+        KeyController.resetNumKey();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ContinueScene(){

@@ -7,7 +7,7 @@ public class WinnerCheck : MonoBehaviour
     [SerializeField] private int numGiftBedInScene;
     [SerializeField] private GameObject winCanvas;
     [SerializeField] private GameObject PlayCanvas;
-    private static int numGiftBed;
+    public static int numGiftBed;
     // Start is called before the first frame update
     void Start()
     {
