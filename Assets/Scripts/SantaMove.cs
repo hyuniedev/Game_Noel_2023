@@ -73,14 +73,14 @@ public class SantaMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Door")
+        if (other.gameObject.tag == "Door"||other.gameObject.tag == "Key")
         {
             KeyE.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Door")
+        if (other.gameObject.tag == "Door"||other.gameObject.tag == "Key")
         {
             KeyE.SetActive(false);
         }

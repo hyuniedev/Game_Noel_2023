@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class KeyController : MonoBehaviour
 {
-    private static int numKey;
+    private static int numKey = 0;
     [SerializeField] private AudioSource audioKey;
-    private void Start() {
-        numKey = 0;
-    }
     public int getNumKey(){
         return numKey;
     }
