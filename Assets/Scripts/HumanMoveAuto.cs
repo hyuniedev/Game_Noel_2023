@@ -40,6 +40,9 @@ public class HumanMoveAuto : MonoBehaviour
             human.transform.position = Vector3.MoveTowards(human.transform.position, target, speedRun * Time.fixedDeltaTime);
         }
     }
+    public void stopRun(){
+        target = transform.position;
+    }
     private void move()
     {
         timeIma += Time.fixedDeltaTime / 10;

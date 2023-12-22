@@ -25,7 +25,6 @@ public class SantaMove : MonoBehaviour
         Time.timeScale = 1.0f;
         audioBG.clip = clipBG;
     }
-    bool anyPhatHien = false;
     // Update is called once per frame
     void Update()
     {
@@ -43,13 +42,12 @@ public class SantaMove : MonoBehaviour
 
         if (firstPhatHien != null)
         {
-            speedMove = 5.5f;
+            speedMove = 4.3f;
         }
         else
         {
-            speedMove = 3.5f;
+            speedMove = 3f;
         }
-        Debug.Log(speedMove);
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
@@ -92,8 +90,11 @@ public class SantaMove : MonoBehaviour
         if (other.gameObject.tag == "Ghost")
         {
             other.gameObject.SetActive(false);
-            audioBG.PlayOneShot(clipLost);
+            if(ButtonController.getOpenAudio()) audioBG.PlayOneShot(clipLost);
             Time.timeScale = 0.0f;
+            foreach(HumanMoveAuto o in gameObjects){
+                o.gameObject.SetActive(false);
+            }
             dieCanvas.SetActive(true);
             playCanvas.SetActive(false);
         }

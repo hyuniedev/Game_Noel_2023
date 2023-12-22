@@ -23,6 +23,7 @@ public class CheckRange : MonoBehaviour
         if(other.gameObject.tag == "Player"){
             GetComponent<SpriteRenderer>().color = new Color(171.0f/255.0f,255.0f/255.0f,171.0f/255.0f,75.0f/255.0f);
             ma.phatHien = false;
+            ma.stopRun();
             audioGhost.Stop();
         }
     }

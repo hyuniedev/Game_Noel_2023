@@ -41,10 +41,12 @@ public class ButtonController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ContinueScene(){
+        Time.timeScale = 1.0f;
         btn_menu.SetActive(true);
         ui.SetActive(false);
     }
     public void MenuOpen(){
+        Time.timeScale = 0.0f;
         btn_menu.SetActive(false);
         ui.SetActive(true);
     }
