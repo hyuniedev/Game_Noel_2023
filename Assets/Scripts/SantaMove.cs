@@ -20,6 +20,7 @@ public class SantaMove : MonoBehaviour
     private float horizontal;
     private float vertical;
     private bool isRight;
+    public static bool move = true;
     private void Start()
     {
         Time.timeScale = 1.0f;
@@ -48,6 +49,11 @@ public class SantaMove : MonoBehaviour
         {
             speedMove = 3f;
         }
+        if(move){
+            playerMove();
+        }
+    }
+    private void playerMove(){
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
@@ -92,11 +98,14 @@ public class SantaMove : MonoBehaviour
             other.gameObject.SetActive(false);
             if(ButtonController.getOpenAudio()) audioBG.PlayOneShot(clipLost);
             Time.timeScale = 0.0f;
-            foreach(HumanMoveAuto o in gameObjects){
-                o.gameObject.SetActive(false);
-            }
+            offGhost();
             dieCanvas.SetActive(true);
             playCanvas.SetActive(false);
         }
+    }
+    public void offGhost(){
+        foreach(HumanMoveAuto o in gameObjects){
+                o.gameObject.SetActive(false);
+            }
     }
 }

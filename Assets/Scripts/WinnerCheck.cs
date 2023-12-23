@@ -7,6 +7,7 @@ public class WinnerCheck : MonoBehaviour
     [SerializeField] private int numGiftBedInScene;
     [SerializeField] private GameObject winCanvas;
     [SerializeField] private GameObject PlayCanvas;
+    [SerializeField] private SantaMove player;
     public static int numGiftBed;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,8 @@ public class WinnerCheck : MonoBehaviour
         if(transform.position.y < -8.5f && numGiftBed == numGiftBedInScene){
             winCanvas.SetActive(true);
             PlayCanvas.SetActive(false);
-            Time.timeScale = 0.0f;
+            SantaMove.move = false;
+            player.offGhost();
         }
     }
     public void incNumGiftBed(){

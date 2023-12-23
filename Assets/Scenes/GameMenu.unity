@@ -196,18 +196,18 @@ MonoBehaviour:
   m_Text: "## H\u01B0\u1EDBng d\u1EABn ch\u01A1i ##\n- D\xF9ng c\xE1c phim ADSW hay
     c\xE1c n\xFAt m\u0169i t\xEAn \u0111\u1EC3 di chuy\u1EC3n\n- D\xF9ng ph\xEDm
     E \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi \u0111\u1ED1i t\u01B0\u1EE3ng
-    (c\u1EEDa, c\xE1c \u0111\u1ED3 v\u1EADt trong ph\xF2ng) \u0111\u1EC3 m\u1EDF
-    c\u1EEDa ho\u1EB7c l\u1EE5c t\xECm ch\xECa kh\xF3a\n- M\u1ED9t s\u1ED1 khu v\u1EF1c
-    ph\u1EA3i \u1EA5n ph\xEDm E nhi\u1EC1u l\u1EA7n m\u1EDBi c\xF3 th\u1EC3 t\xECm
-    th\u1EA5y \u0111\u1ED3\n- Khi b\u1ECB ma \u0111u\u1ED5i theo, b\u1EA1n c\xF3
-    th\u1EC3 ch\u1EA1y kh\u1ECFi ng\xF4i nh\xE0 \u0111\u1EC3 d\u1EEBng vi\u1EC7c
-    b\u1ECB \u0111u\u1ED5i n\xE0y.\n- Ph\u1EA3i c\xF3 ch\xECa kh\xF3a m\u1EDBi c\xF3
-    th\u1EC3 m\u1EDF c\u1EEDa m\u1ED9t s\u1ED1 ph\xF2ng\n- Ch\xECa kh\xF3a \u0111\u01B0\u1EE3c
-    gi\u1EA5u trong nh\xE0\n- Di chuy\u1EC3n c\u1EA9n th\u1EADn \u0111\u1EC3 nh\u1EEFng
-    con ma kh\xF4ng ph\xE1t hi\u1EC7n\n- Sau khi v\xE0o c\xE1c ph\xF2ng ng\u1EE7,
-    \u0111\u1EB7t qu\xE0 l\xEAn gi\u01B0\u1EDDng. \u0110\u1EB7t \u0111\u1EE7 m\u1ED7i
-    ph\xF2ng ng\u1EE7 1 h\u1ED9p qu\xE0 th\xEC ch\u1EA1y kh\u1ECFi ng\xF4i nh\xE0
-    \u0111\u1EC3 chi\u1EBFn th\u1EAFng"
+    \u0111\u1EC3 m\u1EDF c\u1EEDa ho\u1EB7c l\u1EE5c t\xECm ch\xECa kh\xF3a\n- M\u1ED9t
+    s\u1ED1 khu v\u1EF1c ph\u1EA3i \u1EA5n ph\xEDm E nhi\u1EC1u l\u1EA7n m\u1EDBi
+    c\xF3 th\u1EC3 t\xECm th\u1EA5y \u0111\u1ED3\n- Khi b\u1ECB ma \u0111u\u1ED5i
+    theo, b\u1EA1n c\xF3 th\u1EC3 ch\u1EA1y kh\u1ECFi ng\xF4i nh\xE0 \u0111\u1EC3
+    d\u1EEBng vi\u1EC7c b\u1ECB \u0111u\u1ED5i n\xE0y.\n- Ph\u1EA3i c\xF3 ch\xECa
+    kh\xF3a m\u1EDBi c\xF3 th\u1EC3 m\u1EDF c\u1EEDa ph\xF2ng ng\u1EE7\n- Ch\xECa
+    kh\xF3a \u0111\u01B0\u1EE3c gi\u1EA5u trong nh\xE0\n- Di chuy\u1EC3n c\u1EA9n
+    th\u1EADn \u0111\u1EC3 nh\u1EEFng con ma kh\xF4ng ph\xE1t hi\u1EC7n\n- Sau khi
+    v\xE0o c\xE1c ph\xF2ng ng\u1EE7, \u0111\u1EB7t qu\xE0 l\xEAn gi\u01B0\u1EDDng.
+    \u0110\u1EB7t \u0111\u1EE7 m\u1ED7i ph\xF2ng ng\u1EE7 1 h\u1ED9p qu\xE0 (c\xF3
+    7 ph\xF2ng ng\u1EE7) th\xEC ch\u1EA1y kh\u1ECFi ng\xF4i nh\xE0 \u0111\u1EC3 chi\u1EBFn
+    th\u1EAFng"
 --- !u!222 &32898771
 CanvasRenderer:
   m_ObjectHideFlags: 0

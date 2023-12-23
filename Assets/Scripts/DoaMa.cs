@@ -10,23 +10,26 @@ public class DoaMa : MonoBehaviour
     [SerializeField] private GameObject CanvasPlay;
     [SerializeField] private ButtonController ButtonControl;
     [SerializeField] private AudioSource audioGhost;
+    private bool click1Lanthoi = true;
     private void Start() {
         imgGhost.SetActive(false);
     }
     private void Update() {
-        if(checkTrigger){
+        if(checkTrigger && click1Lanthoi){
             ButtonControl.OnOffAudio();
             audioGhost.Play();
-            Debug.Log("Phat am thanh cua ma roif");
             CanvasPlay.SetActive(false);
-            imgGhost.transform.position = player.transform.position +
-            new Vector3(0,0.1f,0);
+            imgGhost.transform.position = Camera.main.transform.position+
+            new Vector3(0,0,4);
+            SantaMove.move = false;
             imgGhost.SetActive(true);
-            Invoke(nameof(hideImgGhost),2f);
+            Invoke(nameof(hideImgGhost),2.2f);
+            click1Lanthoi = false;
             checkTrigger = false;
         }
     }
     private void hideImgGhost(){
+        SantaMove.move = true;
         ButtonControl.OnOffAudio();
         CanvasPlay.SetActive(true);
         imgGhost.SetActive(false);
