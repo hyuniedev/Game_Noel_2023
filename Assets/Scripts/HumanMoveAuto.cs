@@ -14,6 +14,7 @@ public class HumanMoveAuto : MonoBehaviour
     private int index;
     private float timeIma;
     public bool phatHien = false;
+    private bool stopSukoshi = false;
     
     private void Start()
     {
@@ -42,6 +43,11 @@ public class HumanMoveAuto : MonoBehaviour
     }
     public void stopRun(){
         target = transform.position;
+        stopSukoshi = true;
+        Invoke(nameof(resetStopSukoshi),Random.Range(0.5f,1.0f));
+    }
+    private void resetStopSukoshi(){
+        stopSukoshi = false;
     }
     private void move()
     {
@@ -52,7 +58,7 @@ public class HumanMoveAuto : MonoBehaviour
             Invoke(nameof(resetMove), timeSleep);
             timeIma = 0;
         }
-        if (isMove)
+        if (isMove && !stopSukoshi)
         {
             MoveHoyNao();
         }
